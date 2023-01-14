@@ -1,15 +1,5 @@
-## Demo
-
-```bash
-npm run demo
-```
-
-From `src/demo.ts`:
-
-```TypeScript
 import promptSync from "prompt-sync";
-import { DreamilyAPI } from "dreamily-api";
-
+import { DreamilyAPI } from "./index.js";
 
 const api = new DreamilyAPI(
   process.env.DREAMILY_TOKEN || "",
@@ -31,9 +21,3 @@ while (true) {
   );
   console.log(ret);
 }
-```
-
-
-## References
-
-- [Dreamily API Wiki](https://open.caiyunapp.com/Dreamily_API)
