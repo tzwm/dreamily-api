@@ -1,4 +1,4 @@
-## Usage
+## Demo
 
 ```TypeScript
 import promptSync from "prompt-sync";
@@ -9,7 +9,7 @@ const api = new DreamilyAPI(
   "Chian"
 );
 const prompt = promptSync({ sigint: true });
-const universeId = "63c26c1afdffebcc7b80b5ff"; // go to the https://if.caiyunai.com/dashboard/worlds and copy the world ID
+const universeId = "63c26c1afdffebcc7b80b5ff"; // go to https://if.caiyunai.com/dashboard/worlds and copy the world ID
 
 while (true) {
   const input = prompt(">");
@@ -17,7 +17,11 @@ while (true) {
     continue;
   }
 
-  const ret = await api.continue(input, universeId);
+  const ret = await api.continue(
+    input,
+    universeId,
+    200,
+  );
   console.log(ret);
 }
 ```
