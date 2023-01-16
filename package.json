@@ -2,6 +2,7 @@
   "name": "dreamily-api",
   "version": "1.0.0",
   "description": "Unofficial node.js client for the Dreamily API",
+  "tsconfig": "tsconfig.json",
   "type": "module",
   "main": "./built/cjs/index.js",
   "module": "./built/esm/index.ts",
@@ -21,8 +22,11 @@
     "type": "git",
     "url": "git+https://github.com/tzwm/dreamily-api.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "tzwm",
+    "email": "npm@tzwm.me"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tzwm/dreamily-api/issues"
   },
