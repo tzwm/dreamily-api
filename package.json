@@ -1,7 +1,11 @@
 {
   "name": "dreamily-api",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Unofficial node.js client for the Dreamily API",
+  "keywords": [
+    "dreamily",
+    "小梦"
+  ],
   "tsconfig": "tsconfig.json",
   "type": "module",
   "main": "./built/cjs/index.js",
@@ -16,7 +20,7 @@
   },
   "scripts": {
     "build": "tsc && tsc -p tsconfig.cjs.json",
-    "prepare": "npm run build",
+    "prepack": "npm run build",
     "demo": "node --loader=ts-node/esm src/demo.ts"
   },
   "repository": {
@@ -41,5 +45,9 @@
   "dependencies": {
     "@types/prompt-sync": "^4.2.0",
     "prompt-sync": "^4.2.0"
-  }
+  },
+  "files": [
+    "src",
+    "built"
+  ]
 }
