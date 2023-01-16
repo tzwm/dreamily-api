@@ -3,9 +3,18 @@
   "version": "1.0.0",
   "description": "Unofficial node.js client for the Dreamily API",
   "type": "module",
-  "main": "src/index.js",
-  "module": "src/index.js",
+  "main": "./built/cjs/index.js",
+  "module": "./built/esm/index.ts",
+  "types": "./built/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./built/esm/index.d.ts",
+      "import": "./built/esm/index.js",
+      "require": "./built/cjs/index.js"
+    }
+  },
   "scripts": {
+    "build": "tsc && tsc -p tsconfig.cjs.json",
     "demo": "node --loader=ts-node/esm src/demo.ts"
   },
   "repository": {
@@ -21,6 +30,7 @@
   "devDependencies": {
     "eslint": "^8.31.0",
     "ts-node": "^10.9.1",
+    "tsup": "^6.5.0",
     "typescript": "^4.9.4"
   },
   "dependencies": {
