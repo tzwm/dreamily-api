@@ -8,16 +8,22 @@ const api = new DreamilyAPI(
 const prompt = promptSync({ sigint: true });
 const universeId = "63c26c1afdffebcc7b80b5ff"; // go to https://if.caiyunai.com/dashboard/worlds and copy the world ID
 
-while (true) {
-  const input = prompt(">");
-  if (!input) {
-    continue;
-  }
+(async () => {
+  let story = "";
 
-  const ret = await api.continue(
-    input,
-    universeId,
-    200,
-  );
-  console.log(ret);
-}
+  while (true) {
+    const input = prompt(">");
+    if (!input) {
+      continue;
+    }
+
+    story += input;
+    const ret = await api.continue(
+      story,
+      universeId,
+      200,
+    );
+    story += ret;
+    console.log(ret);
+  }
+})();
