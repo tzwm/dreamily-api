@@ -16,6 +16,7 @@
   },
   "scripts": {
     "build": "tsc && tsc -p tsconfig.cjs.json",
+    "prepare": "npm run build",
     "demo": "node --loader=ts-node/esm src/demo.ts"
   },
   "repository": {
