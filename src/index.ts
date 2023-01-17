@@ -31,7 +31,7 @@ export class DreamilyAPI {
       user_id: this.token,
       platform: PLATFORM,
       mid: DEFAULT_MID,
-      regin: this.region,
+      region: this.region,
     };
 
     const res = await fetch(DREAMILY_API_URI, {

@@ -1,38 +1,62 @@
+An unofficial node.js client for the [Dreamily](https://if.caiyunai.com/) API.
+
+> NOTE: The functions of this API is subset of the Dreamily website. And this API maybe is not production ready.
+
+
 ## Demo
+
+A basic [demo](https://github.com/tzwm/dreamily-api/blob/main/src/demo.ts) is included for testing purposes:
 
 ```bash
 npm run demo
 ```
 
-From `src/demo.ts`:
+## API Documents
 
-```TypeScript
-import promptSync from "prompt-sync";
-import { DreamilyAPI } from "dreamily-api";
+Base API URI is `http://if.caiyunai.com/v2/api/bot_ai`.
 
+`POST` `/` `(Continue writing the story)`
 
-const api = new DreamilyAPI(
-  process.env.DREAMILY_TOKEN || "",
-  "China"
-);
-const prompt = promptSync({ sigint: true });
-const universeId = "63c26c1afdffebcc7b80b5ff"; // go to https://if.caiyunai.com/dashboard/worlds and copy the world ID
+##### Parameters
 
-while (true) {
-  const input = prompt(">");
-  if (!input) {
-    continue;
+> | name      |  type     | description                                                           |
+> |-----------|-----------|-----------------------------------------------------------------------|
+> | value |  required | Story content. You need to add previous content before your continuing story by yourself.   |
+> | universe_id |  required |  The world ID of the story. You can find this ID on the dreamily website.   |
+> | length |  required |  The length of response.   |
+> | user_id |  required |  Your token. |
+> | mid |  required |  Story style. You can find this one on the dreamily website. |
+> | region |  ? | ... |
+> | platform |  ? | I don"t know what this parameter means |
+
+##### Responses
+
+```JavaScript
+{
+  status: 0,
+  msg: 'success',
+  data: {
+    row: '\n' +
+      'hello here\n' +
+      'hello i have a question \n' +
+      'hello\n' +
+      "so what's the name of the movie you're watching\n" +
+      'how are you doing\n' +
+      "what's your favorite part about this movie\n" +
+      'i',
+    rows: [
+      '\n' +
+        'hello here\n' +
+        'hello i have a question \n' +
+        'hello\n' +
+        "so what's the name of the movie you're watching\n" +
+        'how are you doing\n' +
+        "what's your favorite part about this movie\n" +
+        'i'
+    ]
   }
-
-  const ret = await api.continue(
-    input,
-    universeId,
-    200,
-  );
-  console.log(ret);
 }
 ```
-
 
 ## References
 
