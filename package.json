@@ -1,6 +1,6 @@
 {
   "name": "dreamily-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Unofficial node.js client for the Dreamily API",
   "keywords": [
     "dreamily",
