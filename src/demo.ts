@@ -22,6 +22,7 @@ const universeId = "63c26c1afdffebcc7b80b5ff"; // go to https://if.caiyunai.com/
       story,
       universeId,
       200,
+      true,
     );
     story += ret;
     console.log(ret);

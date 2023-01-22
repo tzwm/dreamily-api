@@ -24,6 +24,7 @@ Base API URI is `http://if.caiyunai.com/v2/api/bot_ai`.
 > | value |  required | Story content. You need to add previous content before your continuing story by yourself.   |
 > | universe_id |  required |  The world ID of the story. You can find this ID on the dreamily website.   |
 > | length |  required |  The length of response.   |
+> | is_complete |  optional | Whether to return complete sentences.    |
 > | user_id |  required |  Your token. |
 > | mid |  required |  Story style. You can find this one on the dreamily website. |
 > | region |  ? | ... |

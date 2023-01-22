@@ -23,11 +23,17 @@ export class DreamilyAPI {
     this.region = region;
   }
 
-  async continue(content: string, universeId: string, length: number = 200): Promise<string> {
+  async continue(
+    content: string,
+    universeId: string,
+    length: number = 200,
+    isComplete: boolean = false,
+  ): Promise<string> {
     const body = {
       value: content,
       universe_id: universeId,
       length: length,
+      is_complete: isComplete,
       user_id: this.token,
       platform: PLATFORM,
       mid: DEFAULT_MID,
