@@ -5,10 +5,12 @@ An unofficial node.js client for the [Dreamily](https://if.caiyunai.com/) API.
 
 ## Demo
 
-A basic [demo](https://github.com/tzwm/dreamily-api/blob/main/src/demo.ts) is included for testing purposes:
+A basic [demo](https://github.com/tzwm/dreamily-api/blob/main/src/demo.ts) is included for testing purposes.
+
+First, copy the `.env.example` file to `.env` and edit it.
 
 ```bash
-npm run demo
+source .env && npm run demo
 ```
 
 ## API Documents
